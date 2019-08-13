@@ -1,0 +1,32 @@
+<div class="container">
+    <h2>Videos</h2>
+    <hr>
+    <div class="card-columns">
+        <div class="card" *ngFor="let video of videos">
+          <img [src]="video.thumbnails.high.url" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{video.title}}</h5>
+            <button (click)="verVideo(video)"
+                    class="btn btn-outline-primary btn-block">Ver video</button>
+        </div>
+        </div>
+    </div>
+    <button (click)="load()" class="btn btn-outline-primary btn-block my-4">Cargar más</button>
+</div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content" *ngIf="videoSel">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">{{videoSel.title}}</h5>
+        </div>
+        <div class="modal-body">
+            <iframe width="100%" height="300" [src]="videoSel.resourceId.videoId | video" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="modal-footer">
+          <button (click)="cerrarModal()"
+                  type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>

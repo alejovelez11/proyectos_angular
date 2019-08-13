@@ -1,0 +1,14 @@
+<div *ngIf="products.length; else noproducts">
+    <ul>
+        <li *ngFor="let product of products">
+            {{product.name}}
+            {{product.description}}
+            {{product.delete}}
+            <button class="btn btn-danger btn-sm" (click)="deleteProduct(product)">Eliminar</button>
+        </li>
+    </ul>
+</div>
+
+<ng-template #noproducts>
+    No hay productos
+</ng-template>

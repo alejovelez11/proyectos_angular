@@ -1,0 +1,12 @@
+<h2 class="text-center my-4">Peliculas en cartelera</h2>
+<hr>
+<app-galeria [peliculas]="cartelera | slice:0:6"></app-galeria>
+
+<h2 class="text-center my-4">Peliculas Populares</h2>
+<hr>
+<app-galeria [peliculas]="peliculas | slice:0:6"></app-galeria>
+
+<h2 class="text-center my-4">Peliculas Populares de Niños</h2>
+<hr>
+<app-galeria [peliculas]="peliculasChilds | slice:0:6"></app-galeria>
+
